@@ -1,0 +1,182 @@
+---
+title: 'Genomic Imperfections'
+subtitle: "Not Quite a Mirror Image"
+author: "Ethan M. Lotz"
+date: "September 13, 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+# Use 'verbatim = TRUE' as chunk option to show chunk code as is
+require(knitr)
+hook_source_def = knit_hooks$get('source')
+knit_hooks$set(source = function(x, options){
+  if (!is.null(options$verbatim) && options$verbatim){
+    opts = gsub(",\\s*verbatim\\s*=\\s*TRUE\\s*", "", options$params.src)
+    bef = sprintf('\n\n    ```{r %s}\n', opts, "\n")
+    stringr::str_c(bef, paste(knitr:::indent_block(x, "    "), collapse = '\n'), "\n    ```\n")
+  } else {
+     hook_source_def(x, options)
+  }
+})
+```
+
+##The Genomic Imperfection|Case Study: Mirror Image of Internal Organs
+<div class="black">
+- Two brothers born with internal organs on opposite sides
+- Are reversed organs a problem?
+    - Paired organs: Eyes, Kidneys
+    - Solitary Organs: Bladder
+</div>
+<center>
+<figure>
+<img src="Figure 5.1.tif" height="250px"/>
+<font size="3" color="black">
+<figcaption>Mirror Image Flipping of Liver, Spleen, and Stomach</figcaption>
+</font>
+</figure>
+</center>
+
+## Heterotaxy|What About the Heart?!?
+<center>
+<figure>
+<img src="Figure 5.2.tif" height="350px"/>
+<font size="3" color="black">
+<figcaption>Wiring of Blood Vessels into Heart</figcaption>
+</font>
+</figure>
+</center>
+
+#How Does This Develop?
+
+##Developmental Biology
+<div class="black">
+- Vertebrates
+    - Externally bilaterally symmetric
+    - Internally bilaterally asymmetric
+    - Reproducible asymmetry
+        - 99.98% of people have their heart on the left
+- Genetic mutation causes randomization of left-right axis
+    - 50:50 normal internal organ orientation
+    - Mechanism that makes left and right sides different functions normal
+    - Mechanism that decides between the two possible orientations is defective
+</div>
+
+##Developmental Biology
+<center>
+<figure>
+<img src="Figure 5.5.tif" height="400px"/>
+<font size="3" color="black">
+<figcaption>Mouse Emryos: 7.5 days and 8.5 days</figcaption>
+</font>
+</figure>
+</center>
+
+##Developmental Biology
+
+<figure>
+<center><img src="Nodal Cilia.tif" height="450px"/></center>
+<font size="3" color="black">
+<center><figcaption>Helical Beating of Cilia at the Node, and the Origins of Left-Right Asymmetry</figcaption></center>
+</font>
+</figure>
+
+##Uncovering Genes Responsible for Heart Malformation
+<figure>
+<center><img src="Figure 5.8.tif" height="450px"/></center>
+<font size="3" color="black">
+<center><figcaption>Crossing ENU-Treated Mice with Normal Mice to obtain Mice with Two Copies of the Variant</figcaption></center>
+</font>
+</figure>
+
+#Which gene(s) are responsible?
+
+## Where Do We Look?
+<div class="black">
+- Known
+      - Two brothers with alterations in anatomy
+      - Other siblings with normal anatomy
+      - Parents with normal anatomy
+</div>
+
+<center>
+<figure>
+<img src="Figure 5.3.tif" height="200px"/>
+<font size="3" color="black">
+<figcaption>Possible Inheritance Scenarios</figcaption>
+</font>
+</figure>
+</center>
+
+## Where Do We Look?
+<div class="black">
+- Whole Exome Sequencing Criteria
+      - Missense, non-sense, or frameshift variants
+      - Parents have variant in at least one gene copy
+      - Children have variant in both gene copies
+      - Rare variants
+          - Genes known to cause shades of mirror image anatomy
+              - Nothing      
+          - Genes known to cause development disorders
+              - Nothing
+          - Anything remaining?
+              - *BCL9L*
+</div>
+
+## *BCL9L*: Is it the Culprit?|Finding the Functional Amino Acid
+<div class="black">
+- Looking for evolutionary variants
+    - Alanine for Valine 185
+        - Only in mammals
+    - Glycine to Aspartic Acid at 701
+        - Only in mammals
+- *BCL9L* not connected in the formation and function of cilia
+</div>
+
+## What Else is Possible?
+<center>
+<figure>
+<img src="Figure 5.11.12.13.tif" height="500px"/>
+</figure>
+</center>
+
+## New Gene *XYZ99*!
+<div class="black">
+- Father has T missing
+- Mother has entire chunk missing
+- Children inherit both defective copies
+</div>
+<figure>
+<center><img src="Figure 5.14.tif" height="300px"></center>
+<font size="3" color="black">
+<figcaption><center>The Two Copies of XYZ99 in each Individual, with Deletions shown in Black</center></figcaption>
+</font>
+</figure>
+
+#Validation of *XYZ99*
+
+## Detecting the Missing Chunk
+<center>
+<figure>
+<img src="Figure 5.16.17.18.tif" height="500px"/>
+</figure>
+</center>
+
+## Detecting the Missing Chunk
+<div class="black">
+- Missing chunk ends in the middle of the fourth exon of *XYZ99*
+- Total length of 5925bp
+- Children inherit both defective copies
+</div>
+<center>
+<figure>
+<img src="Figure 5.22.tif" height="300px"/>
+</figure>
+</center>
+
+## Conclusions
+- Variants in *XYZ99* have never been seen in any other human patient
+- Defects in *XYZ99* gene can cause heterotaxy and heart malformations
+- Early evidence suggests it plays a role in the subsequent cascade of events following cilia formation rather than development of cilia
+
+# Thank you|Questions?
